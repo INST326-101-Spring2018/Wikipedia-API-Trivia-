@@ -131,7 +131,7 @@ class players:
         players.userCount += 1
 
     def displayCount(self):
-        print("Total Players: " + players.userCount)
+        print("Total Players: " + str(players.userCount))
 
     def displayplayer(self):
         print("Name : ", self.name, ", Score: ", self.score)
