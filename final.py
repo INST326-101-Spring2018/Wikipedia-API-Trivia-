@@ -90,6 +90,10 @@ for item in titles:
 
 question_dict = dict(zip(summary_list, titles)) #dictionary containing the summaries as keys and titles as values
 
+# random pick a question and calculate score- Jiale Xu
+import random
+print("You have 5 chances!")
+print(random.choice(summary_list))
 
 def questions(): #turns the summaries into questions that have to be answered with the correlating title/name.- James Geleta
     for key,value in list(question_dict.items()):
@@ -107,47 +111,44 @@ def questions(): #turns the summaries into questions that have to be answered wi
 
 questions()
 
-# random pick a question and calculate score- Jiale Xu
-import random
-print("You have 5 chances!")
-print(random.choice(summary_list))
 
-
-
-
-
-# class for all users- Jiale Xu
-class players:
-
-   userCount = 0
-
-   def __init__(self, name, score):
-       self.name = name
-       self.score = score
-       players.userCount += 1
-
-   def playCount(self):
-       print("You totally play for 5 times")
-
-
-   def displayplayer(self):
-       print("Name : ", self.name, ", Score: ", self.score)
-
-# calculate score
+# calculate score-Jiale Xu
 scores_total = 0
 if user_answer = value:
    scores_total = difficulty * 10
 else:
    scores_total = difficulty * 5
 
-check_result = input("Do you want to see your ranking, enter yes or no: ")
-if check_result == 'yes' or 'YES' or 'Yes':
-   player_name = input("PLease enter your name: ")
-   player_score = scores_total
 
-   player1 = players(player_name, player_score)
-   player1.displayplayer()
-   print("Total players: " + players.userCount )
+# class for all users- Jiale Xu
+class players:
 
-else:
-   print("Thank you for playing the game!")
+    userCount = 0
+
+    def __init__(self, name, score):
+        self.name = name
+        self.score = score
+        players.userCount += 1
+
+    def displayCount(self):
+        print("Total Players: " + players.userCount)
+
+    def displayplayer(self):
+        print("Name : ", self.name, ", Score: ", self.score)
+
+
+# Ranking- Jiale Xu
+player_name = input("PLease enter your name: ")
+player_score = scores_total
+
+player1 = players(player_name, player_score)
+descrip1 = player1.displayplayer()
+
+print("Total players: " + str(players.userCount))
+print(player1)
+print(descrip1)
+
+
+
+
+
